@@ -1,48 +1,1828 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tomas Chianello</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-    margin:0;
-    background:#ffffff;
-    font-family:Arial,Helvetica,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    text-align:center;
-}
+  <title>Tomas Chianello | Sport Massage Specialist</title>
+  <meta name="description" content="Massaggi sportivi, decontratturanti, linfodrenanti e trattamenti personalizzati a domicilio nelle province di Monza, Lecco e Como.">
+  <meta name="keywords" content="massaggiatore sportivo, massaggio decontratturante, massaggio a domicilio, Monza, Lecco, Como, Tomas Chianello">
+  <meta name="author" content="Tomas Chianello">
+  <meta name="theme-color" content="#0a0d12">
 
-h1{
-    font-size:48px;
-    margin-bottom:10px;
-}
+  <meta property="og:title" content="Tomas Chianello | Sport Massage Specialist">
+  <meta property="og:description" content="Trattamenti professionali a domicilio per recupero, benessere e performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tomaschianello.com/">
 
-h2{
-    color:#1f4cff;
-    font-weight:400;
-    margin-top:0;
-}
+  <link rel="canonical" href="https://tomaschianello.com/">
 
-p{
-    color:#666;
-    font-size:18px;
-}
-</style>
+  <style>
+    :root {
+      --black: #080a0e;
+      --anthracite: #151a22;
+      --steel: #27303d;
+      --blue-deep: #0b3d91;
+      --blue-electric: #1684ff;
+      --white: #f6f8fb;
+      --muted: #aeb7c5;
+      --line: rgba(255, 255, 255, 0.11);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1180px;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(22, 132, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.06), transparent 25%),
+        linear-gradient(135deg, var(--black), var(--anthracite) 48%, #0b0f16);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.36;
+      background:
+        linear-gradient(115deg, transparent 0 26%, rgba(255,255,255,.035) 27%, transparent 29% 56%, rgba(255,255,255,.025) 58%, transparent 61%),
+        linear-gradient(25deg, transparent 0 34%, rgba(255,255,255,.02) 36%, transparent 39% 71%, rgba(22,132,255,.035) 73%, transparent 76%);
+      background-size: 420px 320px, 520px 420px;
+      mix-blend-mode: screen;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 34px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 104px 0;
+      position: relative;
+    }
+
+    .section.compact {
+      padding: 78px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #81bdff;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 17px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue-electric), transparent);
+      border-radius: 999px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 7.2rem);
+      max-width: 930px;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 5vw, 4.5rem);
+      max-width: 820px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: clamp(1.04rem, 2vw, 1.25rem);
+      max-width: 720px;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #fff, #7fc0ff 55%, #1684ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .25s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translateX(-120%);
+      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.22), transparent 80%);
+      transition: transform .55s ease;
+    }
+
+    .btn:hover::after {
+      transform: translateX(120%);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-electric), var(--blue-deep));
+      color: white;
+      box-shadow: 0 12px 34px rgba(22, 132, 255, .3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 42px rgba(22, 132, 255, .42);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(22,132,255,.6);
+      background: rgba(22,132,255,.08);
+      transform: translateY(-2px);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: .25s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(8, 10, 14, .82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.03)),
+        linear-gradient(145deg, var(--blue-electric), var(--blue-deep));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 10px 26px rgba(0,0,0,.3);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-copy small {
+      color: var(--muted);
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d7deea;
+      font-size: .94rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #76baff;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: white;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 132px 0 78px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      right: -220px;
+      top: 8%;
+      background: radial-gradient(circle, rgba(22,132,255,.24), transparent 68%);
+      filter: blur(14px);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy .lead {
+      margin-top: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-badges {
+      margin-top: 42px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.035);
+      color: #dce5f2;
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue-electric);
+      box-shadow: 0 0 14px var(--blue-electric);
+    }
+
+    .hero-card {
+      min-height: 590px;
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      overflow: hidden;
+      background:
+        linear-gradient(165deg, rgba(255,255,255,.08), rgba(255,255,255,.015)),
+        linear-gradient(145deg, #202833, #0e1218 70%);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(112deg, transparent 0 35%, rgba(255,255,255,.08) 37%, transparent 40% 63%, rgba(22,132,255,.14) 66%, transparent 70%),
+        linear-gradient(30deg, transparent 0 45%, rgba(255,255,255,.04) 48%, transparent 52%);
+      background-size: 430px 340px, 380px 320px;
+      opacity: .8;
+      z-index: -1;
+    }
+
+    .hero-card::after {
+      content: "TC";
+      position: absolute;
+      right: -22px;
+      bottom: -74px;
+      font-size: 18rem;
+      font-weight: 950;
+      color: rgba(255,255,255,.035);
+      letter-spacing: -.12em;
+      z-index: -1;
+    }
+
+    .profile-orbit {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      position: absolute;
+      top: 78px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.12);
+      background: radial-gradient(circle, rgba(22,132,255,.18), rgba(22,132,255,.03) 58%, transparent 60%);
+    }
+
+    .profile-orbit::before,
+    .profile-orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px dashed rgba(22,132,255,.32);
+    }
+
+    .profile-orbit::before {
+      inset: -28px;
+      animation: rotate 22s linear infinite;
+    }
+
+    .profile-orbit::after {
+      inset: 28px;
+      animation: rotate 14s linear infinite reverse;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .profile-core {
+      width: 126px;
+      height: 126px;
+      border-radius: 30px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--blue-electric), #062a67);
+      color: white;
+      font-weight: 950;
+      font-size: 3.1rem;
+      box-shadow: 0 24px 70px rgba(22,132,255,.36);
+    }
+
+    .floating-panel {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(8, 10, 14, .68);
+      backdrop-filter: blur(16px);
+    }
+
+    .floating-panel strong {
+      display: block;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .floating-panel p {
+      font-size: .94rem;
+    }
+
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      padding: 30px 20px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+    }
+
+    .trust-number {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: white;
+    }
+
+    .trust-label {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 2px;
+    }
+
+    .about-grid,
+    .areas-grid,
+    .method-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .marble-card {
+      min-height: 510px;
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.018)),
+        #161c24;
+      box-shadow: var(--shadow);
+    }
+
+    .marble-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(125deg, transparent 15%, rgba(255,255,255,.12) 17%, transparent 20% 42%, rgba(22,132,255,.12) 45%, transparent 49% 70%, rgba(255,255,255,.06) 72%, transparent 76%),
+        linear-gradient(22deg, transparent 26%, rgba(255,255,255,.05) 29%, transparent 33% 66%, rgba(255,255,255,.04) 69%, transparent 73%);
+      background-size: 460px 360px, 520px 420px;
+      opacity: .82;
+    }
+
+    .about-monogram {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: clamp(8rem, 18vw, 14rem);
+      font-weight: 950;
+      letter-spacing: -.14em;
+      color: rgba(255,255,255,.055);
+      transform: translateX(-10px);
+    }
+
+    .about-label {
+      position: absolute;
+      left: 26px;
+      bottom: 26px;
+      right: 26px;
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(8,10,14,.65);
+      backdrop-filter: blur(13px);
+    }
+
+    .about-copy p + p {
+      margin-top: 18px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .check {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      color: #dbe4ef;
+    }
+
+    .check-icon {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(22,132,255,.14);
+      border: 1px solid rgba(22,132,255,.32);
+      color: #7fc0ff;
+      font-weight: 900;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 34px;
+      margin-bottom: 42px;
+    }
+
+    .section-head p {
+      max-width: 510px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 285px;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(150deg, rgba(255,255,255,.065), rgba(255,255,255,.016)),
+        rgba(13,17,23,.76);
+      position: relative;
+      overflow: hidden;
+      transition: .28s ease;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -72px;
+      top: -70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(22,132,255,.20), transparent 70%);
+      transition: .28s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(22,132,255,.42);
+      box-shadow: 0 22px 50px rgba(0,0,0,.28);
+    }
+
+    .service-card:hover::before {
+      transform: scale(1.18);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #8cc6ff;
+      border: 1px solid rgba(22,132,255,.28);
+      background: rgba(22,132,255,.10);
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-bottom: 52px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: .95rem;
+    }
+
+    .benefits-wrap {
+      padding: 44px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(125deg, rgba(22,132,255,.11), transparent 38%),
+        linear-gradient(155deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .benefit {
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(8,10,14,.45);
+      border: 1px solid var(--line);
+    }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 1rem;
+    }
+
+    .benefit p {
+      font-size: .9rem;
+    }
+
+    .method-steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .method-step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.032);
+    }
+
+    .step-number {
+      width: 54px;
+      height: 54px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      background: linear-gradient(145deg, rgba(22,132,255,.22), rgba(22,132,255,.06));
+      border: 1px solid rgba(22,132,255,.28);
+      color: #8fc9ff;
+    }
+
+    .method-step p {
+      margin-top: 7px;
+      font-size: .94rem;
+    }
+
+    .areas-panel {
+      border-radius: 30px;
+      min-height: 420px;
+      border: 1px solid var(--line);
+      padding: 32px;
+      background:
+        radial-gradient(circle at 70% 35%, rgba(22,132,255,.20), transparent 28%),
+        linear-gradient(145deg, #1b222c, #0d1117);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .areas-panel::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      right: -50px;
+      top: 40px;
+      box-shadow:
+        0 0 0 40px rgba(255,255,255,.025),
+        0 0 0 80px rgba(22,132,255,.02);
+    }
+
+    .city-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .city {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(8,10,14,.52);
+      backdrop-filter: blur(8px);
+      font-weight: 800;
+    }
+
+    .city span:last-child {
+      color: #76baff;
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.032);
+    }
+
+    .stars {
+      color: #78baff;
+      letter-spacing: .16em;
+      margin-bottom: 18px;
+    }
+
+    .testimonial blockquote {
+      color: #dfe7f2;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .testimonial footer {
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+      margin: 42px auto 0;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,.032);
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 21px 23px;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .faq-plus {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      color: #80bdff;
+      transition: .25s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .28s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 23px 22px;
+    }
+
+    .faq-item.open .faq-plus {
+      transform: rotate(45deg);
+      background: rgba(22,132,255,.12);
+    }
+
+    .cta {
+      padding: 58px;
+      border-radius: 34px;
+      border: 1px solid rgba(22,132,255,.28);
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% -20%, rgba(22,132,255,.34), transparent 46%),
+        linear-gradient(145deg, #1a222d, #0b0f15);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .4;
+      background:
+        linear-gradient(120deg, transparent 20%, rgba(255,255,255,.06) 23%, transparent 26% 63%, rgba(255,255,255,.04) 66%, transparent 70%);
+      background-size: 540px 360px;
+    }
+
+    .cta > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      margin: 0 auto;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 20px auto 30px;
+    }
+
+    .site-footer {
+      padding: 42px 0 26px;
+      border-top: 1px solid var(--line);
+      margin-top: 100px;
+      background: rgba(0,0,0,.12);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr .7fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .footer-copy {
+      max-width: 470px;
+      margin-top: 16px;
+    }
+
+    .footer-title {
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #79baff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      margin-top: 34px;
+      padding-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: #7e8998;
+      font-size: .84rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #26d367, #129942);
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 950;
+      box-shadow: 0 18px 38px rgba(18,153,66,.35);
+      transition: .25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        top: 82px;
+        left: 17px;
+        right: 17px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: rgba(8,10,14,.96);
+        backdrop-filter: blur(18px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: .24s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 15px;
+        border-radius: 13px;
+      }
+
+      .nav-links li a:hover {
+        background: rgba(255,255,255,.045);
+      }
+
+      .nav-links .btn {
+        margin-top: 6px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .areas-grid,
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 126px;
+      }
+
+      .hero-card {
+        min-height: 510px;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .trust-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .services-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid > :first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .nav {
+        min-height: 74px;
+      }
+
+      .nav-links {
+        top: 74px;
+      }
+
+      .brand-copy small {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 16vw, 4.5rem);
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-card {
+        min-height: 430px;
+      }
+
+      .profile-orbit {
+        width: 190px;
+        height: 190px;
+        top: 58px;
+      }
+
+      .profile-core {
+        width: 105px;
+        height: 105px;
+        font-size: 2.5rem;
+      }
+
+      .floating-panel {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        padding: 19px;
+      }
+
+      .trust-item {
+        padding: 24px 12px;
+      }
+
+      .trust-number {
+        font-size: 1.35rem;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 18px;
+      }
+
+      .services-grid,
+      .testimonials-grid,
+      .benefits-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid > :first-child {
+        grid-column: auto;
+      }
+
+      .benefits-wrap,
+      .cta {
+        padding: 28px 20px;
+      }
+
+      .marble-card {
+        min-height: 390px;
+      }
+
+      .method-step {
+        grid-template-columns: 46px 1fr;
+      }
+
+      .step-number {
+        width: 46px;
+        height: 46px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!--
+    PRIMA DI PUBBLICARE:
+    1) Sostituisci 39INSERISCIILNUMERO con il tuo numero WhatsApp completo, senza + e senza spazi.
+       Esempio: 393331234567
+    2) Sostituisci INSERISCIUSERNAME con il tuo username Instagram.
+    3) Sostituisci info@tomaschianello.com con la tua email reale, se diversa.
+    4) Inserisci la tua Partita IVA nel footer.
+  -->
 
-<div>
-<h1>Tomas Chianello</h1>
-<h2>Sport Massage Specialist</h2>
-<p>Sito ufficiale in fase di realizzazione.</p>
-</div>
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Tomas Chianello - Home">
+        <span class="brand-mark">TC</span>
+        <span class="brand-copy">
+          Tomas Chianello
+          <small>Sport Massage Specialist</small>
+        </span>
+      </a>
 
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#chi-sono">Chi sono</a></li>
+        <li><a href="#trattamenti">Trattamenti</a></li>
+        <li><a href="#metodo">Metodo</a></li>
+        <li><a href="#zone">Zone</a></li>
+        <li>
+          <a class="btn btn-primary" href="https://wa.me/39INSERISCIILNUMERO?text=Ciao%20Tomas%2C%20vorrei%20ricevere%20informazioni%20e%20prenotare%20un%20trattamento." target="_blank" rel="noopener">
+            Prenota
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Trattamenti professionali a domicilio</span>
+
+          <h1>
+            Recupera meglio.
+            <span class="text-gradient">Muoviti meglio.</span>
+          </h1>
+
+          <p class="lead">
+            Massaggi sportivi e trattamenti personalizzati per ridurre le tensioni,
+            favorire il recupero e migliorare il benessere fisico, direttamente a casa tua.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/39INSERISCIILNUMERO?text=Ciao%20Tomas%2C%20vorrei%20prenotare%20un%20trattamento." target="_blank" rel="noopener">
+              Prenota su WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#trattamenti">
+              Scopri i trattamenti
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <span class="badge"><span class="badge-dot"></span> Monza</span>
+            <span class="badge"><span class="badge-dot"></span> Lecco</span>
+            <span class="badge"><span class="badge-dot"></span> Como</span>
+          </div>
+        </div>
+
+        <div class="hero-card reveal" aria-label="Tomas Chianello Sport Massage Specialist">
+          <div class="profile-orbit">
+            <div class="profile-core">TC</div>
+          </div>
+
+          <div class="floating-panel">
+            <strong>Esperienza sportiva professionistica</strong>
+            <p>
+              Un approccio costruito sul campo, adattato alle esigenze reali di sportivi,
+              lavoratori e persone che desiderano ritrovare mobilità e benessere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Punti di forza">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-number">100%</div>
+          <div class="trust-label">Trattamento personalizzato</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">A casa</div>
+          <div class="trust-label">Comodità e riservatezza</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">Pro</div>
+          <div class="trust-label">Esperienza nello sport</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">3 aree</div>
+          <div class="trust-label">Monza, Lecco e Como</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="chi-sono">
+      <div class="container about-grid">
+        <div class="marble-card reveal">
+          <div class="about-monogram">TC</div>
+          <div class="about-label">
+            <strong>Tomas Chianello</strong>
+            <p>Operatore del massaggio sportivo e professionista del recupero.</p>
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">Chi sono</span>
+          <h2>Esperienza, precisione e attenzione alla persona.</h2>
+
+          <p class="lead" style="margin-top: 24px;">
+            Sono Tomas Chianello, massaggiatore sportivo specializzato nel recupero muscolare,
+            nella riduzione delle tensioni e nel miglioramento del benessere fisico.
+          </p>
+
+          <p>
+            L’esperienza maturata nel ciclismo professionistico mi ha insegnato a lavorare
+            con metodo, ascolto e precisione. Ogni trattamento viene adattato alle condizioni,
+            agli obiettivi e alle sensazioni della persona, senza protocolli standardizzati.
+          </p>
+
+          <div class="checks">
+            <div class="check">
+              <span class="check-icon">✓</span>
+              <span>Valutazione iniziale e trattamento costruito sulle tue esigenze.</span>
+            </div>
+            <div class="check">
+              <span class="check-icon">✓</span>
+              <span>Materiale professionale portato direttamente al tuo domicilio.</span>
+            </div>
+            <div class="check">
+              <span class="check-icon">✓</span>
+              <span>Approccio orientato a recupero, benessere e continuità nel tempo.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trattamenti">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">I trattamenti</span>
+            <h2>Ogni corpo ha esigenze diverse.</h2>
+          </div>
+          <p>
+            Il trattamento viene scelto e modulato in base al tuo livello di attività,
+            alle zone di tensione e all’obiettivo della seduta.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">01</div>
+            <h3>Massaggio sportivo</h3>
+            <p>
+              Pensato per sportivi e persone attive. Favorisce il recupero muscolare,
+              riduce la sensazione di affaticamento e prepara il corpo alla performance.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">02</div>
+            <h3>Decontratturante</h3>
+            <p>
+              Trattamento mirato per cervicale, trapezi, schiena, zona lombare e altre
+              aree sottoposte a sovraccarico o tensione muscolare.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">03</div>
+            <h3>Linfodrenante</h3>
+            <p>
+              Manualità leggere e ritmiche per favorire il drenaggio dei liquidi,
+              alleggerire gli arti e migliorare la sensazione generale di benessere.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">04</div>
+            <h3>Full body</h3>
+            <p>
+              Un trattamento completo rivolto alle principali aree corporee per ridurre
+              lo stress, rilassare la muscolatura e favorire il recupero psicofisico.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">05</div>
+            <h3>Maderoterapia</h3>
+            <p>
+              Tecnica manuale eseguita con strumenti in legno, orientata al trattamento
+              degli inestetismi della cellulite e al miglioramento della tonicità dei tessuti.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">06</div>
+            <h3>Tecniche integrate</h3>
+            <p>
+              Quando indicato, il trattamento può integrare coppettazione, strumenti miofasciali,
+              taping e altre tecniche complementari.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="benefits-wrap reveal">
+          <span class="eyebrow">I benefici</span>
+          <h2>Un trattamento pensato per farti stare e muovere meglio.</h2>
+
+          <div class="benefits-grid">
+            <div class="benefit">
+              <strong>Meno tensioni</strong>
+              <p>Lavoro mirato sulle aree più rigide e affaticate.</p>
+            </div>
+            <div class="benefit">
+              <strong>Recupero migliore</strong>
+              <p>Supporto dopo allenamenti, gare e periodi intensi.</p>
+            </div>
+            <div class="benefit">
+              <strong>Più mobilità</strong>
+              <p>Maggiore libertà e qualità del movimento percepito.</p>
+            </div>
+            <div class="benefit">
+              <strong>Più comodità</strong>
+              <p>Il trattamento professionale arriva direttamente a casa tua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodo">
+      <div class="container method-grid">
+        <div class="reveal">
+          <span class="eyebrow">Il metodo</span>
+          <h2>Non un trattamento uguale per tutti.</h2>
+          <p class="lead" style="margin-top: 22px;">
+            Prima di iniziare ascolto le tue esigenze, valuto le aree da trattare
+            e costruisco una seduta coerente con il tuo obiettivo.
+          </p>
+        </div>
+
+        <div class="method-steps">
+          <div class="method-step reveal">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Ascolto e valutazione</h3>
+              <p>Parliamo delle tue sensazioni, delle attività svolte e delle zone che richiedono maggiore attenzione.</p>
+            </div>
+          </div>
+
+          <div class="method-step reveal">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Trattamento personalizzato</h3>
+              <p>Scelgo intensità, manualità e tecniche in funzione della risposta dei tessuti e delle tue esigenze.</p>
+            </div>
+          </div>
+
+          <div class="method-step reveal">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Indicazioni finali</h3>
+              <p>Al termine della seduta condivido indicazioni utili per mantenere i benefici e gestire meglio il recupero.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="zone">
+      <div class="container areas-grid">
+        <div class="areas-panel reveal">
+          <span class="eyebrow">Servizio a domicilio</span>
+          <h3 style="font-size: 2rem;">Arrivo direttamente da te.</h3>
+
+          <div class="city-list">
+            <div class="city">
+              <span>Monza e Brianza</span>
+              <span>Disponibile</span>
+            </div>
+            <div class="city">
+              <span>Lecco e provincia</span>
+              <span>Disponibile</span>
+            </div>
+            <div class="city">
+              <span>Como e provincia</span>
+              <span>Disponibile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">Comodità e professionalità</span>
+          <h2>Il tuo spazio diventa il luogo del trattamento.</h2>
+          <p class="lead" style="margin-top: 22px;">
+            Porto con me il materiale necessario per creare una seduta professionale,
+            comoda e riservata, evitando spostamenti e attese.
+          </p>
+
+          <div class="checks">
+            <div class="check">
+              <span class="check-icon">✓</span>
+              <span>Lettino e materiale professionale.</span>
+            </div>
+            <div class="check">
+              <span class="check-icon">✓</span>
+              <span>Appuntamenti concordati in base alla disponibilità.</span>
+            </div>
+            <div class="check">
+              <span class="check-icon">✓</span>
+              <span>Supplemento trasferta comunicato prima della conferma, quando necessario.</span>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" style="margin-top: 30px;" href="https://wa.me/39INSERISCIILNUMERO?text=Ciao%20Tomas%2C%20vorrei%20sapere%20se%20il%20servizio%20%C3%A8%20disponibile%20nella%20mia%20zona." target="_blank" rel="noopener">
+            Verifica la disponibilità
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recensioni">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Recensioni</span>
+            <h2>La qualità si misura anche nelle sensazioni.</h2>
+          </div>
+          <p>
+            Queste recensioni sono testi dimostrativi: sostituiscili con recensioni reali
+            oppure collega in futuro la tua scheda Google.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              “Trattamento professionale e molto preciso. Ho sentito le gambe più leggere
+              già dopo la seduta.”
+            </blockquote>
+            <footer>Cliente sportivo</footer>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              “Comodissimo il servizio a domicilio. Tomas è puntuale, preparato e attento
+              alle esigenze della persona.”
+            </blockquote>
+            <footer>Cliente a domicilio</footer>
+          </article>
+
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              “Avevo molta tensione tra cervicale e trapezi. Il trattamento è stato intenso
+              ma sempre gestito con grande attenzione.”
+            </blockquote>
+            <footer>Cliente decontratturante</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div style="text-align: center;" class="reveal">
+          <span class="eyebrow">Domande frequenti</span>
+          <h2 style="margin: 0 auto;">Tutto ciò che serve sapere.</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>Come scelgo il trattamento più adatto?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Durante il primo contatto puoi descrivermi le tue esigenze. Prima della seduta
+                valuteremo insieme le zone da trattare e l’obiettivo principale.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>Cosa devo preparare a casa?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                È sufficiente uno spazio libero per posizionare il lettino. Porterò il materiale
+                necessario per lo svolgimento del trattamento.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>Quanto dura una seduta?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                La durata varia in base al trattamento concordato e alle zone da trattare.
+                Ti verrà comunicata prima della conferma dell’appuntamento.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>Il servizio è disponibile anche fuori zona?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Le aree principali sono Monza, Lecco e Como. Per località più distanti,
+                la disponibilità e l’eventuale supplemento vengono valutati prima della prenotazione.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              <span>Il massaggio sostituisce una valutazione medica?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No. I trattamenti proposti sono orientati al benessere e al recupero muscolare
+                e non sostituiscono diagnosi, terapie o valutazioni di professionisti sanitari.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="contatti">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="eyebrow">Prenota il tuo trattamento</span>
+          <h2>Inizia dal primo messaggio.</h2>
+          <p>
+            Scrivimi su WhatsApp indicando la tua zona, il trattamento che ti interessa
+            e le tue disponibilità. Ti risponderò con tutte le informazioni necessarie.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/39INSERISCIILNUMERO?text=Ciao%20Tomas%2C%20vorrei%20ricevere%20informazioni%20e%20prenotare%20un%20trattamento." target="_blank" rel="noopener">
+            Contattami su WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="brand">
+            <span class="brand-mark">TC</span>
+            <span class="brand-copy">
+              Tomas Chianello
+              <small>Sport Massage Specialist</small>
+            </span>
+          </a>
+
+          <p class="footer-copy">
+            Trattamenti professionali a domicilio per recupero muscolare,
+            benessere e performance nelle province di Monza, Lecco e Como.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigazione</div>
+          <ul class="footer-links">
+            <li><a href="#chi-sono">Chi sono</a></li>
+            <li><a href="#trattamenti">Trattamenti</a></li>
+            <li><a href="#metodo">Metodo</a></li>
+            <li><a href="#zone">Zone</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Contatti</div>
+          <ul class="footer-links">
+            <li>
+              <a href="https://wa.me/39INSERISCIILNUMERO" target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+            <li>
+              <a href="https://instagram.com/INSERISCIUSERNAME" target="_blank" rel="noopener">Instagram</a>
+            </li>
+            <li>
+              <a href="mailto:info@tomaschianello.com">Email</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Tomas Chianello. Tutti i diritti riservati.</span>
+        <span>P. IVA: INSERISCI PARTITA IVA · Privacy Policy</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/39INSERISCIILNUMERO?text=Ciao%20Tomas%2C%20vorrei%20ricevere%20informazioni." target="_blank" rel="noopener" aria-label="Contatta Tomas su WhatsApp">
+    W
+  </a>
+
+  <script>
+    const header = document.getElementById("header");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const year = document.getElementById("year");
+
+    year.textContent = new Date().getFullYear();
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        const answer = item.querySelector(".faq-answer");
+        const alreadyOpen = item.classList.contains("open");
+
+        document.querySelectorAll(".faq-item.open").forEach(openItem => {
+          openItem.classList.remove("open");
+          openItem.querySelector(".faq-answer").style.maxHeight = null;
+        });
+
+        if (!alreadyOpen) {
+          item.classList.add("open");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      revealObserver.observe(element);
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tomas Chianello | Sport Massage Specialist",
+    "url": "https://tomaschianello.com/",
+    "description": "Massaggi sportivi e trattamenti professionali a domicilio nelle province di Monza, Lecco e Como.",
+    "areaServed": [
+      "Monza e Brianza",
+      "Lecco",
+      "Como"
+    ],
+    "sameAs": [
+      "https://instagram.com/INSERISCIUSERNAME"
+    ],
+    "telephone": "+39INSERISCIILNUMERO"
+  }
+  </script>
 </body>
 </html>
