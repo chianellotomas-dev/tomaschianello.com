@@ -1297,6 +1297,11 @@
 
 <body>
   <!--
+    Compatibilità mobile/social:
+    i pulsanti LocalFlow si aprono nella stessa finestra per funzionare
+    anche nel browser interno di Instagram e Facebook.
+  -->
+  <!--
     Immagini incorporate direttamente nel file HTML:
     - foto personale nella sezione Chi sono
     - texture blu usata come sfondo del sito
@@ -1341,7 +1346,7 @@
         <li><a href="#metodo">Metodo</a></li>
         <li><a href="#zone">Zone</a></li>
         <li>
-          <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_self" data-localflow-link>
             Prenota
           </a>
         </li>
@@ -1366,7 +1371,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_blank" rel="noopener">
+            <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_self" data-localflow-link>
               Prenota online
             </a>
             <a class="btn btn-secondary" href="#trattamenti">
@@ -1653,7 +1658,7 @@
             </div>
           </div>
 
-          <a class="btn btn-primary" style="margin-top: 30px;" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_blank" rel="noopener">
+          <a class="btn btn-primary" style="margin-top: 30px;" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_self" data-localflow-link>
             Verifica disponibilità e orari
           </a>
         </div>
@@ -1789,7 +1794,7 @@
             Scrivimi su WhatsApp indicando la tua zona, il trattamento che ti interessa
             e le tue disponibilità. Ti risponderò con tutte le informazioni necessarie.
           </p>
-          <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec" target="_self" data-localflow-link>
             Prenota il trattamento
           </a>
         </div>
@@ -1873,6 +1878,14 @@
       const isOpen = navLinks.classList.toggle("open");
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+
+    document.querySelectorAll("[data-localflow-link]").forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+        window.location.assign("https://script.google.com/macros/s/AKfycbz29kXZIaCplzE5Iu-XlBIihMtQ5T6neHZjy6xRb15M0u5Ze7qycqKE-jMcpHgWzYoXbA/exec");
+      });
     });
 
     document.querySelectorAll(".nav-links a").forEach(link => {
