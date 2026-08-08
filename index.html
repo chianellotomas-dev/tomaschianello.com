@@ -995,6 +995,41 @@
       color: #79baff;
     }
 
+    .legal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .legal-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #dbe6f3;
+      background: rgba(255,255,255,.035);
+      font-size: .78rem;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .legal-link:hover {
+      color: #ffffff;
+      border-color: rgba(22,132,255,.55);
+      background: rgba(22,132,255,.10);
+    }
+
+    .vat-note {
+      color: rgba(174,183,197,.48);
+      font-size: .68rem;
+      letter-spacing: .015em;
+      white-space: nowrap;
+    }
+
     .footer-bottom {
       border-top: 1px solid var(--line);
       margin-top: 34px;
@@ -1326,7 +1361,6 @@
     WhatsApp: +39 391 182 5944
     Instagram: @Chianello.Tomas
     Email: info@tomaschianello.com
-    P. IVA: 14500500963
   -->
 
   <header class="site-header" id="header">
@@ -1855,8 +1889,14 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Tomas Chianello. Tutti i diritti riservati.</span>
-        <span>P. IVA: 14500500963 · Privacy Policy</span>
+        <div>
+          <span>© <span id="year"></span> Tomas Chianello. Tutti i diritti riservati.</span>
+          <div class="legal-actions" aria-label="Informazioni legali">
+            <a class="legal-link" href="/privacy.html">Privacy Policy</a>
+            <a class="legal-link" href="/eliminazione-dati.html">Eliminazione dati</a>
+          </div>
+        </div>
+        <span class="vat-note">P. IVA 14500500963</span>
       </div>
     </div>
   </footer>
