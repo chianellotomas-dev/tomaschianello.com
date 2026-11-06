@@ -711,6 +711,17 @@
       font-size: .95rem;
     }
 
+    /* Dettagli dei trattamenti: stessa grafica, senza script aggiuntivi */
+    .service-details { margin-top: 22px; position: relative; z-index: 1; }
+    .service-details summary { display: inline-flex; align-items: center; gap: 10px; color: #83c2ff; font-size: .93rem; font-weight: 800; cursor: pointer; list-style: none; padding: 7px 0; }
+    .service-details summary::-webkit-details-marker { display: none; }
+    .service-details summary:focus-visible { outline: 2px solid #83c2ff; outline-offset: 5px; border-radius: 5px; }
+    .service-detail-arrow { display: inline-block; transition: transform .2s ease; font-size: 1.25rem; }
+    .service-details[open] .service-detail-arrow { transform: rotate(180deg); }
+    .service-extra { border-top: 1px solid var(--line); padding-top: 17px; margin-top: 13px; }
+    .service-extra p { font-size: .91rem; line-height: 1.65; margin-bottom: 15px; }
+    .service-extra strong { display: block; color: #eaf3ff; font-size: .84rem; margin-bottom: 3px; }
+
     .benefits-wrap {
       padding: 44px;
       border-radius: 30px;
@@ -1519,56 +1530,87 @@
           <article class="service-card reveal">
             <div class="service-icon">01</div>
             <h3>Massaggio sportivo</h3>
-            <p>
-              Pensato per sportivi e persone attive. Favorisce il recupero muscolare,
-              riduce la sensazione di affaticamento e prepara il corpo alla performance.
-            </p>
+            <p>Pensato per chi pratica attività fisica, a livello amatoriale o agonistico. Il trattamento si adatta allo sport e al momento dell’allenamento.</p>
+            <details class="service-details">
+              <summary>Scopri di più <span class="service-detail-arrow" aria-hidden="true">⌄</span></summary>
+              <div class="service-extra">
+                <p><strong>Come si svolge</strong>Manualità mirate e intensità personalizzata, utili prima dell’attività per preparare la muscolatura oppure dopo uno sforzo per favorire rilassamento e comfort.</p>
+                <p><strong>A chi è rivolto</strong>Ciclisti, runner, atleti e persone che si allenano regolarmente.</p>
+                <p><strong>Benefici</strong>Aiuta a ridurre la sensazione di tensione e affaticamento e accompagna il recupero dopo l’attività.</p>
+              </div>
+            </details>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">02</div>
             <h3>Decontratturante</h3>
-            <p>
-              Trattamento mirato per cervicale, trapezi, schiena, zona lombare e altre
-              aree sottoposte a sovraccarico o tensione muscolare.
-            </p>
+            <p>Un trattamento concentrato sulle zone più rigide o tese, come collo, trapezi, spalle, schiena e gambe.</p>
+            <details class="service-details">
+              <summary>Scopri di più <span class="service-detail-arrow" aria-hidden="true">⌄</span></summary>
+              <div class="service-extra">
+                <p><strong>Come si svolge</strong>Attraverso pressioni graduali, impastamenti e manualità specifiche, lavoro sulle aree che richiedono maggiore attenzione, rispettando la sensibilità della persona.</p>
+                <p><strong>A chi è rivolto</strong>Chi avverte tensioni muscolari dovute a lavoro, posture prolungate, sport o stress.</p>
+                <p><strong>Benefici</strong>Favorisce il rilassamento delle aree tese e una maggiore sensazione di comfort nei movimenti.</p>
+              </div>
+            </details>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">03</div>
             <h3>Linfodrenante</h3>
-            <p>
-              Manualità leggere e ritmiche per favorire il drenaggio dei liquidi,
-              alleggerire gli arti e migliorare la sensazione generale di benessere.
-            </p>
+            <p>Un massaggio delicato, con movimenti leggeri, lenti e ritmici, diverso dalle pressioni profonde del decontratturante.</p>
+            <details class="service-details">
+              <summary>Scopri di più <span class="service-detail-arrow" aria-hidden="true">⌄</span></summary>
+              <div class="service-extra">
+                <p><strong>Come si svolge</strong>Le manualità seguono il percorso della circolazione linfatica superficiale e vengono adattate alle esigenze e alle condizioni della persona.</p>
+                <p><strong>A chi è rivolto</strong>Chi desidera un trattamento rilassante o avverte una sensazione di pesantezza agli arti.</p>
+                <p><strong>Benefici</strong>Può favorire una sensazione di leggerezza e, quando appropriato, supportare il movimento dei liquidi nei tessuti. In caso di gonfiore improvviso, persistente o non spiegato è necessaria una valutazione medica prima del massaggio.</p>
+              </div>
+            </details>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">04</div>
             <h3>Full body</h3>
-            <p>
-              Un trattamento completo rivolto alle principali aree corporee per ridurre
-              lo stress, rilassare la muscolatura e favorire il recupero psicofisico.
-            </p>
+            <p>Un trattamento completo e distensivo, che coinvolge le principali aree del corpo in un’unica seduta.</p>
+            <details class="service-details">
+              <summary>Scopri di più <span class="service-detail-arrow" aria-hidden="true">⌄</span></summary>
+              <div class="service-extra">
+                <p><strong>Come si svolge</strong>Combino manualità rilassanti con un’intensità adattata alla persona, dedicando attenzione a schiena, arti superiori e inferiori.</p>
+                <p><strong>A chi è rivolto</strong>Chi desidera staccare dalla routine, avverte tensioni diffuse o cerca benessere generale.</p>
+                <p><strong>Benefici</strong>Favorisce il rilassamento e aiuta ad alleviare la sensazione di affaticamento complessivo.</p>
+              </div>
+            </details>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">05</div>
             <h3>Maderoterapia</h3>
-            <p>
-              Tecnica manuale eseguita con strumenti in legno, orientata al trattamento
-              degli inestetismi della cellulite e al miglioramento della tonicità dei tessuti.
-            </p>
+            <p>Un massaggio estetico e di benessere che utilizza strumenti in legno dalle forme diverse, applicati con movimenti controllati.</p>
+            <details class="service-details">
+              <summary>Scopri di più <span class="service-detail-arrow" aria-hidden="true">⌄</span></summary>
+              <div class="service-extra">
+                <p><strong>Come si svolge</strong>Gli strumenti vengono scelti in base alla zona trattata, soprattutto gambe e glutei, regolando sempre pressione e ritmo.</p>
+                <p><strong>A chi è rivolto</strong>Chi desidera un massaggio manuale dedicato ai tessuti superficiali.</p>
+                <p><strong>Benefici</strong>Può dare una sensazione di leggerezza e migliorare temporaneamente l’aspetto della pelle. Non è un trattamento dimagrante e non elimina definitivamente la cellulite.</p>
+              </div>
+            </details>
           </article>
 
           <article class="service-card reveal">
             <div class="service-icon">06</div>
             <h3>Tecniche integrate</h3>
-            <p>
-              Quando indicato, il trattamento può integrare coppettazione, strumenti miofasciali,
-              taping e altre tecniche complementari.
-            </p>
+            <p>Un trattamento personalizzato che può affiancare al massaggio tecniche e strumenti complementari, quando opportuno.</p>
+            <details class="service-details">
+              <summary>Scopri di più <span class="service-detail-arrow" aria-hidden="true">⌄</span></summary>
+              <div class="service-extra">
+                <p><strong>Come si svolge</strong>In base alle esigenze possono essere utilizzati coppettazione, strumenti miofasciali, taping e altre manualità specifiche, dopo aver considerato la tolleranza e le controindicazioni.</p>
+                <p><strong>A chi è rivolto</strong>Sportivi e persone con necessità diverse da una seduta all’altra.</p>
+                <p><strong>Benefici</strong>Permette di adattare il lavoro a singole aree e sensazioni senza applicare automaticamente le stesse tecniche a tutti.</p>
+              </div>
+            </details>
           </article>
+
         </div>
       </div>
     </section>
@@ -1696,42 +1738,18 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Recensioni</span>
-            <h2>La qualità si misura anche nelle sensazioni.</h2>
+            <span class="eyebrow">Recensioni Google</span>
+            <h2>La tua esperienza conta.</h2>
           </div>
           <p>
-            Queste recensioni sono testi dimostrativi: sostituiscili con recensioni reali
-            oppure collega in futuro la tua scheda Google.
+            Hai ricevuto un trattamento? La tua opinione è importante.
+            Condividi la tua esperienza su Google e aiuta altre persone a conoscere il mio lavoro.
           </p>
         </div>
-
-        <div class="testimonials-grid">
-          <article class="testimonial reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>
-              “Trattamento professionale e molto preciso. Ho sentito le gambe più leggere
-              già dopo la seduta.”
-            </blockquote>
-            <footer>Cliente sportivo</footer>
-          </article>
-
-          <article class="testimonial reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>
-              “Comodissimo il servizio a domicilio. Tomas è puntuale, preparato e attento
-              alle esigenze della persona.”
-            </blockquote>
-            <footer>Cliente a domicilio</footer>
-          </article>
-
-          <article class="testimonial reveal">
-            <div class="stars">★★★★★</div>
-            <blockquote>
-              “Avevo molta tensione tra cervicale e trapezi. Il trattamento è stato intenso
-              ma sempre gestito con grande attenzione.”
-            </blockquote>
-            <footer>Cliente decontratturante</footer>
-          </article>
+        <div class="reveal" style="border:1px solid rgba(22,132,255,.22);border-radius:var(--radius-lg);background:linear-gradient(130deg,rgba(22,132,255,.10),rgba(255,255,255,.025));padding:clamp(26px,5vw,48px);text-align:center;">
+          <h3 style="font-size:clamp(1.45rem,3vw,2.25rem);margin-bottom:16px;">Hai già provato uno dei miei trattamenti?</h3>
+          <p style="max-width:650px;margin:0 auto 28px;">Lascia un parere autentico sulla tua esperienza. La tua recensione mi aiuta a migliorare e a farmi conoscere.</p>
+          <a class="btn btn-primary" href="https://share.google/CXlWHzWKFcjv85S4j" target="_blank" rel="noopener noreferrer" aria-label="Apri la scheda Google di Tomas Chianello per lasciare una recensione">Lascia una recensione su Google ↗</a>
         </div>
       </div>
     </section>
