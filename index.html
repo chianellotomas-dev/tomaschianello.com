@@ -1343,6 +1343,21 @@
         transform: none;
       }
     }
+  
+  /* Preferenze statistiche: componente isolato, senza alterare il layout esistente */
+  .tc-cookie-banner{position:fixed;bottom:20px;left:20px;z-index:9999;max-width:520px;width:calc(100% - 40px);padding:23px;border:1px solid rgba(130,188,255,.32);border-radius:22px;background:rgba(7,15,29,.97);color:#fff;box-shadow:0 18px 55px rgba(0,0,0,.55);font-family:inherit}
+  .tc-cookie-banner[hidden]{display:none!important}
+  .tc-cookie-banner h2{font-size:1.2rem;line-height:1.25;letter-spacing:0;margin:0 0 9px}
+  .tc-cookie-banner p{font-size:.9rem;line-height:1.55;color:#c3cfdf;margin:0 0 15px}
+  .tc-cookie-banner a{color:#9dd1ff;text-decoration:underline}
+  .tc-cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .tc-cookie-actions button{border-radius:999px;border:1px solid rgba(126,189,255,.34);padding:11px 18px;font-weight:750;font-size:.9rem;font-family:inherit;cursor:pointer}
+  .tc-cookie-deny{background:rgba(255,255,255,.08);color:#fff}
+  .tc-cookie-accept{background:linear-gradient(130deg,#1684ff,#0b3d91);color:#fff}
+  .tc-cookie-open{color:#a9bad0;background:transparent;border:0;padding:0;cursor:pointer;font:inherit;text-decoration:underline;text-underline-offset:3px}
+  .tc-cookie-actions button:focus-visible,.tc-cookie-open:focus-visible{outline:2px solid #81c5ff;outline-offset:4px}
+  @media(max-width:600px){.tc-cookie-banner{left:12px;bottom:12px;width:calc(100% - 24px);padding:18px}.tc-cookie-actions button{flex:1}}
+
   </style>
 </head>
 
@@ -1896,6 +1911,7 @@
           <span>© <span id="year"></span> Tomas Chianello. Tutti i diritti riservati.</span>
           <div class="legal-actions" aria-label="Informazioni legali">
             <a class="legal-link" href="/privacy.html">Privacy Policy</a>
+            <button type="button" id="tcCookieOpen" class="tc-cookie-open">Preferenze cookie</button>
           </div>
         </div>
         <span class="vat-note">P. IVA 14500500963</span>
@@ -1986,5 +2002,81 @@
     "telephone": "+393911825944"
   }
   </script>
+
+  <section id="tcCookieBanner" class="tc-cookie-banner" role="dialog" aria-modal="false" aria-labelledby="tcCookieTitle" aria-describedby="tcCookieText" hidden>
+    <h2 id="tcCookieTitle">La tua privacy conta</h2>
+    <p id="tcCookieText">Il sito funziona anche senza cookie statistici. Con il tuo consenso, Google Analytics ci aiuta a capire quante persone visitano il sito e cliccano su WhatsApp. Puoi rifiutare senza conseguenze e cambiare idea in qualsiasi momento. <a href="/privacy.html">Privacy Policy</a>.</p>
+    <div class="tc-cookie-actions">
+      <button type="button" id="tcCookieDeny" class="tc-cookie-deny">Rifiuta</button>
+      <button type="button" id="tcCookieAccept" class="tc-cookie-accept">Accetta statistiche</button>
+    </div>
+  </section>
+  <script>
+  /* Google Analytics 4: configurazione diretta. Nessun tag Google è caricato prima del consenso. */
+  (() => {
+    const measurementId = 'G-EN26KYZN23';
+    const storageKey = 'tc_cookie_analytics_choice_v1';
+    const banner = document.getElementById('tcCookieBanner');
+    const openButton = document.getElementById('tcCookieOpen');
+    let analyticsStarted = false;
+    let analyticsAllowed = false;
+
+    function readChoice() {
+      try { const item = JSON.parse(localStorage.getItem(storageKey) || 'null');
+        if (item && (item.choice === 'accepted' || item.choice === 'rejected') && Date.now() - item.at < 180*24*60*60*1000) return item.choice;
+      } catch (_) {}
+      return null;
+    }
+    function saveChoice(choice) {
+      try { localStorage.setItem(storageKey, JSON.stringify({choice,at:Date.now()})); } catch (_) {}
+    }
+    function removeAnalyticsCookies() {
+      document.cookie.split(';').map(c => c.trim().split('=')[0]).filter(n => n === '_ga' || n.startsWith('_ga_')).forEach(name => {
+        ['/', ''].forEach(path => {
+          document.cookie = name + '=; Max-Age=0; path=' + (path || '/') + '; SameSite=Lax';
+        });
+      });
+    }
+    function startAnalytics() {
+      if (analyticsStarted) return;
+      analyticsStarted = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () {window.dataLayer.push(arguments);};
+      gtag('js', new Date());
+      gtag('consent', 'default', {analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+      gtag('config', measurementId, {send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+      document.head.appendChild(script);
+    }
+    function setChoice(choice) {
+      saveChoice(choice);
+      analyticsAllowed = choice === 'accepted';
+      banner.hidden = true;
+      if (analyticsAllowed) startAnalytics();
+      else {
+        if (typeof window.gtag === 'function') window.gtag('consent', 'update', {analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+        removeAnalyticsCookies();
+        /* Ricarica per garantire che nessuno script Analytics resti attivo dopo la revoca. */
+        if (analyticsStarted) window.location.reload();
+      }
+    }
+    document.getElementById('tcCookieAccept').addEventListener('click', () => setChoice('accepted'));
+    document.getElementById('tcCookieDeny').addEventListener('click', () => setChoice('rejected'));
+    openButton.addEventListener('click', () => { banner.hidden = false; document.getElementById('tcCookieDeny').focus(); });
+    document.addEventListener('click', event => {
+      const link = event.target.closest('a[href]');
+      if (!link || !analyticsAllowed || typeof window.gtag !== 'function') return;
+      const href = link.href || '';
+      if (/^https:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//i.test(href))
+        window.gtag('event', 'click_whatsapp', {event_category:'contatti',event_label:'WhatsApp',link_url:href});
+    });
+    const choice = readChoice();
+    if (choice === 'accepted') {analyticsAllowed=true;startAnalytics();}
+    else if (choice === null) banner.hidden=false;
+  })();
+  </script>
+
 </body>
 </html>
